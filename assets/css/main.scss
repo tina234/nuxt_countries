@@ -8,13 +8,8 @@ body, html {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px 50px;
     filter: drop-shadow(0px 0px 7px rgba(0,0,0,0.05));
     background-color: #fff;
-
-    svg {
-        padding-right: 12px;
-    }
 }
 
 .loader {
@@ -27,12 +22,8 @@ body, html {
     justify-content: center;
     align-items: center;
     z-index: 999;
-    background-color: #fff;
+    background-color: #f2f2f2;
     flex-direction: column;
-
-    svg {
-        color: #fff;
-    }
 }
 
 .container {
@@ -42,17 +33,15 @@ body, html {
     overflow: hidden;
 
     .main-box {
-        margin: 0px 50px;
 
         .search-box {
             display: flex;
             align-items: center;
             justify-content: space-between;
+            flex-wrap: wrap;
 
             .search-bar {
-                outline: none;
-                max-width: 210px;
-                margin: 60px 30px;
+                outline: none;  
                 position: relative;
 
                 input {
@@ -75,7 +64,6 @@ body, html {
                         font-size: 25px;
                     }
                 }
-                
             }
 
             .costum-select {
@@ -84,8 +72,7 @@ body, html {
                 outline: none;
                 filter: drop-shadow(0px 0px 7px rgba(0,0,0,0.15));
                 border-radius: 8px;
-                width: 210px;
-                margin: 40px 50px;
+                min-width: 210px;
         
                 &::after {
                     content: "\02EF";
@@ -126,7 +113,6 @@ body, html {
                 max-width: 550px;
                 flex-basis: 300px;
                 flex-grow: 1;
-                margin: 0 30px 60px 30px;
                 border-radius: 7px;
                 background-color: #fff;
                 filter: drop-shadow(0px 0px 7px rgba(0,0,0,0.15));
@@ -139,13 +125,11 @@ body, html {
                 img {
                     width: 100%;
                     object-fit: cover;
-                    height: 260px;
                     border-radius: 7px;
                     filter: drop-shadow(0px -10px 25px #808080);
                 }
 
                 div {
-                    padding: 0 30px 30px;
 
                     h2 {
                         color: #000;
@@ -250,3 +234,94 @@ body, html {
         }
     }
 }
+
+//////////////////   media query  //////////////////////
+
+@media only screen and (max-width: 589px) {
+    .header {
+        padding: 10px 15px;
+
+        h1 {
+            font-size: 19px;
+        }
+
+        p {
+            font-size: 15px;
+        }
+
+        svg {
+            padding-right: 5px;
+        }
+    }
+
+    .main-box {
+      margin: 0px 15px;
+
+        .search-box {
+          padding: 30px 0;
+
+            .search-bar {
+              margin-bottom: 15px;
+              width: 100%;
+
+                input {
+                  width: 100%;
+                  box-sizing: border-box;
+                }
+            }
+        }
+
+        .country-item {
+            margin: 0 0 30px 0;
+
+            img {
+                height: 230px;
+            }
+
+            div {
+                padding: 0 30px 5px 30px;
+            }
+        }
+    }
+}
+
+@media only screen and (min-width: 590px) {
+
+    .header {
+        padding: 20px 50px;
+
+        svg {
+            padding-right: 12px;
+        }
+    }
+
+    .main-box {
+        margin: 0px 50px;
+
+        .search-box {
+            padding: 50px 30px;
+
+            .search-bar {
+                max-width: 210px;
+                margin-right: 10px;
+            }
+
+            .costum-select {
+                max-width: 210px;
+            }
+        }
+
+        .country-item {
+            margin: 0 30px 60px 30px;
+
+            img {
+                height: 260px;
+            }
+
+            div {
+                padding: 0 30px 30px;
+            }
+        }
+    }
+}
+
