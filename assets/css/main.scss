@@ -176,17 +176,14 @@ body, html {
 
 .country-container {
     margin: 0px 30px;
-    display: flex;
-    justify-content: flex-start;
     flex-wrap: wrap;
     align-items: center;
 
     .img-box {
-        max-width: 710px;
-        width: 100%;
-        min-width: 300px;
+        max-width: 700px;
+        flex-basis: 500px;
+        flex-grow: 1;
         height: auto;
-        margin-right: 60px;
 
         img {
            width: 100%;
@@ -194,16 +191,16 @@ body, html {
         }
     }
     .country-info {
-        max-width: 650px;
-        width: 100%;
-        margin-left: 60px;
+        max-width: 700px;
+        flex-basis: 500px;
+        flex-grow: 1;
 
         .two-colums {
-            margin: 50px 0;
+            margin: 30px 0;
             display: flex;
 
             .first-column {
-                margin-right: 150px;
+                margin-right: 20px;
                 flex-basis: 350px;
                 flex-grow: 1;
 
@@ -325,3 +322,52 @@ body, html {
     }
 }
 
+/////////////// media query for country-detail page  //////////////////
+
+@media only screen and (min-width: 1280px) {
+
+    .country-container {
+        display: flex;
+        justify-content: flex-start;
+    
+        .img-box {
+             margin-left: 60px;
+        }
+    }
+}
+
+@media only screen and (max-width: 1279px) { 
+    .country-container {
+        display: flex;
+        justify-content: center;
+
+        .country-info {
+            margin: 0;
+
+            .img-box {
+                margin-right: 60px;
+
+                .first-column {
+                    flex-basis: 220px;
+                    flex-grow: 1;
+                }
+        
+                .second-column {
+                    flex-basis: 220px;
+                    flex-grow: 1;
+                }
+            }
+        }    
+    }
+}
+
+@media only screen and (max-width: 1219px) {
+
+    .img-box {
+        margin-right: 0;
+    }
+
+
+
+
+}
