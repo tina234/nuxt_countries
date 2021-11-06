@@ -24,7 +24,7 @@
                 <div class="countries-box">
                     <li class="country-item"
                         v-for="country in countries" 
-                        :key="country.name">
+                        :key="country.name.common">
                         <nuxt-link :to="'/country_details/' + country.name.common">
                             <img :src="country.flags.svg" alt="">
                             <div>

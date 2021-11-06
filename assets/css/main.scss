@@ -106,6 +106,7 @@ body, html {
         .countries-box {
             display: flex;
             justify-content: center;
+            flex-wrap: wrap;
 
             .country-item {
                 list-style: none;
