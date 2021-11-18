@@ -10,7 +10,7 @@
                         <span @click="submitSearch()"></span>
                     </div>
                     <div class="costum-select">
-                        <p class="region-name">Filter by region</p>
+                        <p class="region-name">{{ selected_region_text }}</p>
                         <select name="regions" v-model="selected_region" @change="submitSearch()">
                             <option value="all">All</option>
                             <option value="europe">Europe</option>
@@ -49,6 +49,7 @@ export default {
         return {
             search_query: '',
             selected_region: '',
+            selected_region_text: 'Filter by region',
         }
     },
 
@@ -56,6 +57,12 @@ export default {
         ...mapGetters ({
             countries: 'getCountries', 
         }),
+    },
+
+     watch: {
+        selected_region: function (new_region, old_region) {
+             this.selected_region_text = this.selected_region.charAt(0).toUpperCase() + this.selected_region.slice(1);
+        }
     },
 
     methods: {

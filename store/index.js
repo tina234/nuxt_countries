@@ -35,15 +35,19 @@ export const mutations = {
     },
 
     findCountryByName(state, countryName){
+        this.commit('changeLoadingStatus'); 
         state.original_countries.find( country => {
             if(country.name.common == countryName){
                 state.country = country;
             }
-        })
+        });
+        setTimeout(() => {
+            this.commit('changeLoadingStatus');
+        }, 700);
     },
 
-    searchForCountry(state, payload){          /*payload zamjenjuje ostale parametre*/
-        state.loading = true;
+    searchForCountry(state, payload){   
+        this.commit('changeLoadingStatus');       /*payload zamjenjuje ostale parametre*/
         let region = payload.selected_region;
         let countryName = payload.search_query;
         let searched_countries = [];       /* array za spremanje svih zemalja iz određene regije npr zemlje Europe*/
@@ -73,8 +77,14 @@ export const mutations = {
         }else{
             state.countries = searched_countries;
         } 
-        state.loading = false;
+        setTimeout(() => {
+            this.commit('changeLoadingStatus');
+        }, 700);
     },
+
+    changeLoadingStatus(state){
+        state.loading = !state.loading;
+    }
 };
 
 export const actions = {
