@@ -6,6 +6,7 @@ export const state = () => ({
     country: {},
     error: '',
     loading: true,
+    
 });
 
 export const getters = {
